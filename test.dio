@@ -1,13 +1,13 @@
-<mxfile host="65bd71144e" modified="2021-01-24T11:41:18.311Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" version="13.10.0" etag="IMNhWEoXHzrx6TPHXIG8" type="embed" pages="2">
+<mxfile host="65bd71144e" modified="2021-01-24T12:11:48.181Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" version="13.10.0" etag="cZ21qBcWgp89NQjbPgjB" type="embed" pages="2">
     <diagram id="DBVaOP2b9_wrQ7j6qG41" name="ページ1">
-        <mxGraphModel dx="700" dy="2776" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="690" dy="2776" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="18" value="items" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
                     <mxGeometry x="440" y="-1120" width="200" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" value="item_name&#10;item_info&#10;item_category_id&#10;item_sales_status_id&#10;item_shipping_fee_status_id&#10;item_prefecture_id&#10;item_scheduled_delivery_id&#10;item_price&#10;addtax_price&#10;profit&#10;users_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="18">
+                <mxCell id="19" value="name&#10;info&#10;category_id&#10;sales_status_id&#10;shipping_fee_status_id&#10;prefecture_id&#10;scheduled_delivery_id&#10;price&#10;user" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="18">
                     <mxGeometry y="26" width="200" height="174" as="geometry"/>
                 </mxCell>
                 <mxCell id="22" value="users" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
@@ -31,13 +31,13 @@
                 <mxCell id="39" value="orders" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
                     <mxGeometry x="80" y="-840" width="200" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="40" value="&#10;items_id&#10;users_id&#10;&#10;&#10;&#10;&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="39">
+                <mxCell id="40" value="&#10;item&#10;user&#10;&#10;&#10;&#10;&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="39">
                     <mxGeometry y="26" width="200" height="174" as="geometry"/>
                 </mxCell>
-                <mxCell id="Y2IBAnE_VINRwyjbn-Uv-56" value="delevery" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+                <mxCell id="Y2IBAnE_VINRwyjbn-Uv-56" value="deleveries" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
                     <mxGeometry x="440" y="-840" width="200" height="190" as="geometry"/>
                 </mxCell>
-                <mxCell id="Y2IBAnE_VINRwyjbn-Uv-57" value="card_number&#10;card_exp_month&#10;card_exp_year&#10;card_exp_cvc&#10;postal_code&#10;prefecture_id&#10;city&#10;addresses&#10;building&#10;phone_number&#10;order" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="Y2IBAnE_VINRwyjbn-Uv-56">
+                <mxCell id="Y2IBAnE_VINRwyjbn-Uv-57" value="postal_code&#10;prefecture_id&#10;city&#10;addresses&#10;building&#10;phone_number&#10;order" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="Y2IBAnE_VINRwyjbn-Uv-56">
                     <mxGeometry y="26" width="200" height="164" as="geometry"/>
                 </mxCell>
                 <mxCell id="Y2IBAnE_VINRwyjbn-Uv-61" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERzeroToOne;entryX=0.01;entryY=0.54;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="19">

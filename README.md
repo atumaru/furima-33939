@@ -22,14 +22,14 @@
 
 | Column                      |  Type     | Options            |
 |---------------------------- |-----------|--------------------|
-| item_name                   | string    | null: false        |
-| item_info                   | text      | null: false        |
-| item_category_id            | integer   | null: false        |
-| item_sales_status_id        | integer   | null: false        |
-| item_shipping_fee_status_id | integer   | null: false        |
-| item_prefecture_id          | integer   | null: false        |
-| item_scheduled_delivery_id  | integer   | null: false        |
-| item_price                  | integer   | null: false        |
+| name                        | string    | null: false        |
+| info                        | text      | null: false        |
+| category_id                 | integer   | null: false        |
+| sales_status_id             | integer   | null: false        |
+| shipping_fee_status_id      | integer   | null: false        |
+| prefecture_id               | integer   | null: false        |
+| scheduled_delivery_id       | integer   | null: false        |
+| price                       | integer   | null: false        |
 | user                        | references| foreign_key: true  |
 
 
@@ -52,20 +52,16 @@
 -belongs_to :item
 -has_one    :delivery
 
-## delivery テーブル
+## deliveries テーブル
 
 | Column         |  Type       | Options            |
 |----------------|-------------|--------------------|
-| card_number    | integer     | null: false        |
-| card_exp_month | integer     | null: false        |
-| card-exp_year  | integer     | null: false        |
-| card_exp_cvc   | integer     | null: false        |
-| postal_code    | integer     | null: false        |
+| postal_code    | string      | null: false        |
 | prefecture_id  | integer     | null: false        |
 | city           | string      | null: false        |
-| addresses      | string      | null: false        |
+| address        | string      | null: false        |
 | building       | string      |                    |
-| phone_number   | integer     | null:false         |
+| phone_number   | string      | null:false         |
 | order          | references  | foreign_key:  true |
 
 -belongs_to  :order
