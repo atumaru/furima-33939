@@ -19,6 +19,9 @@ class User < ApplicationRecord
   validates :email,uniqueness: true
   VALID_PASSWORD_REGEX = VALID_PASSWORD_REGEX = /\A(?=.*?[A-z])(?=.*?[\d])[A-z\d]+\z/
   validates :password, format: { with: VALID_PASSWORD_REGEX }
+  
 
+  has_many :items
+  
 
 end
