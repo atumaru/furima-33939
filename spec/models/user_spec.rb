@@ -81,17 +81,17 @@ RSpec.describe User, type: :model do
       @user.password = "999999"
       @user.valid?
       expect(@user.errors.full_messages).to include "Password is invalid"
-  end
+    end
     it "first_nameが全角カタカナ、全角ひらがな、全角漢字でないと登録できない" do
     @user.first_name = "kawai"
     @user.valid?
     expect(@user.errors.full_messages).to include "First name is invalid"
-  end
+    end
     it "last_nameが全角カタカナ、全角ひらがな、全角漢字でないと登録できない" do
     @user.last_name = "atsushi"
     @user.valid?
     expect(@user.errors.full_messages).to include "Last name is invalid"
-  end
+    end
     it "first_name_kanaが全角カタカナでないと登録できない" do
       @user.first_name_kana = "かわい"
       @user.valid?
@@ -107,6 +107,17 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include "Email is invalid"
     end
+    it "passewordが半角英語のみ(6桁)では登録できない" do
+      @user.password = "aaaaaa"
+      @user.valid?
+      expect(@user.errors.full_messages).to include "Password is invalid"
+    end
+    it "全角英数混合(6桁)は登録できない" do
+      @user.password = "ａｄＡＤ１２"
+      @user.valid?
+      expect(@user.errors.full_messages).to include "Password is invalid"
+    end
+  
 
   end    
 end
