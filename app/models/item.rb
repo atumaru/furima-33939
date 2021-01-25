@@ -12,3 +12,4 @@ class Item < ApplicationRecord
   validates :item_price,numericality:{reater_than_or_equal_to:300,less_than_or_qruel_to:9999999}
   validates :item_price,format:{/\A[0-9]+\z/}
 end
+
