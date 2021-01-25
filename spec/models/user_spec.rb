@@ -109,6 +109,7 @@ RSpec.describe User, type: :model do
     end
     it "passewordが半角英語のみ(6桁)では登録できない" do
       @user.password = "aaaaaa"
+      @user.password_confirmation = "aaaaaa"
       @user.valid?
       expect(@user.errors.full_messages).to include "Password is invalid"
     end

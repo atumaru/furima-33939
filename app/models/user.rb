@@ -17,7 +17,7 @@ class User < ApplicationRecord
   validates :last_name_kana
   end
   validates :email,uniqueness: true
-  VALID_PASSWORD_REGEX = VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])[a-z\d]+\z/
+  VALID_PASSWORD_REGEX = VALID_PASSWORD_REGEX = /\A(?=.*?[A-z])(?=.*?[\d])[A-z\d]+\z/
   validates :password, format: { with: VALID_PASSWORD_REGEX }
 
 
