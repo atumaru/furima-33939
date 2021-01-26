@@ -2,7 +2,8 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :info
-    validates :price,inclusion: {in:(300..99999999)}
+    validates :price,inclusion: {in:(300..99999999)},format:{with:/\A[0-9]+\z/}
+    validates :image
   end
 
   with_options presence: true,numericality: { other_than: 1} do
