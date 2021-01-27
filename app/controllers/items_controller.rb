@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: %i[new create edit update]
-  before_action :move_to_index, only: [:edit]
-  before_action :set_item, only: %i[show edit update move_to_index]
+  before_action :authenticate_user!, only: %i[new create edit update destroy]
+  before_action :set_item, only: %i[show edit update destroy  ]
+  before_action :move_to_index, only: [:edit, :destroy]
   def index
     @items = Item.all.order('created_at DESC')
   end
@@ -23,7 +23,8 @@ class ItemsController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit 
+  end
 
   def update
     if @item.update(item_params)
@@ -33,6 +34,14 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+
+    if @item.destroy
+      redirect_to root_path
+    end
+  end
+
+
   private
 
   def set_item
@@ -40,7 +49,10 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to root_path if user_signed_in? && current_user.id != @item.user_id
+    
+     if current_user.id != @item.user_id
+      redirect_to action: :index
+     end
   end
 
   def item_params
