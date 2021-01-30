@@ -2,17 +2,15 @@
 
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update destroy]
-  before_action :set_item, only: %i[show edit update destroy  ]
-  before_action :move_to_index, only: [:edit, :destroy]
+  before_action :set_item, only: %i[show edit update destroy]
+  before_action :move_to_index, only: %i[edit destroy]
   before_action :move_to_home,  only: [:edit]
   def index
     @items = Item.all.order('created_at DESC')
-    
   end
 
   def new
     @item = Item.new
-    
   end
 
   def create
@@ -26,8 +24,7 @@ class ItemsController < ApplicationController
 
   def show; end
 
-  def edit 
-  end
+  def edit; end
 
   def update
     if @item.update(item_params)
@@ -38,12 +35,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-
-    if @item.destroy
-      redirect_to root_path
-    end
+    redirect_to root_path if @item.destroy
   end
-
 
   private
 
@@ -52,20 +45,14 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    
-     if current_user.id != @item.user_id
-      redirect_to action: :index
-     end
+    redirect_to action: :index if current_user.id != @item.user_id
   end
 
-  def move_to_home 
-    if current_user.id == @item.user_id && @item.order != nil
+  def move_to_home
+    if current_user.id == @item.user_id && !@item.order.nil?
       redirect_to root_path
     end
-
   end
-
-    
 
   def item_params
     params.require(:item).permit(:image, :name, :info, :category_id, :sales_status_id, :shipping_fee_status_id, :prefecture_id, :scheduled_delivery_id, :price).merge(user_id: current_user.id)
