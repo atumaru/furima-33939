@@ -10,8 +10,8 @@ class  DeliveryOrder
   validates :prefecture_id,numericality: { other_than: 1 }
   validates :city
   validates :address
-  validates :phone_number, format: {with: /\A0[5789]0[-]?\d{4}[-]?\d{4}\z/}
-  
+  validates :phone_number, format: {with: /\A\d{10,11}\z/}
+  validates :token
  end
  
  

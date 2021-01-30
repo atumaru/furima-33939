@@ -1,8 +1,11 @@
 class OrdersController < ApplicationController
-
+  before_action :authenticate_user!, only: %i[index create]
+  before_action :set_item, only:[:index,:move_to_root,:item_sold_out,:pay_item]
+  before_action :move_to_root, only:[:index]
+  before_action :item_sold_out, only:[:index]
   def index
     @delivery_order = DeliveryOrder.new
-    @item = Item.find(params[:item_id])
+    
     
     
     
@@ -28,6 +31,27 @@ class OrdersController < ApplicationController
 
   private
 
+  def set_item
+
+    @item = Item.find(params[:item_id])
+
+  end
+
+  def move_to_root
+    
+    if current_user.id == @item.user_id
+      redirect_to root_path
+    end
+  end
+
+   def item_sold_out
+     
+     if @item.order != nil
+      redirect_to root_path
+     end
+    end
+    
+
   
 
   def user_order_params
@@ -39,7 +63,7 @@ class OrdersController < ApplicationController
   
   def pay_item
     
-     @item = Item.find(params[:item_id])
+     
      
      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
      Payjp::Charge.create(
