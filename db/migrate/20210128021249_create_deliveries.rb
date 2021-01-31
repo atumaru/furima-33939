@@ -5,7 +5,7 @@ class CreateDeliveries < ActiveRecord::Migration[6.0]
       t.integer :prefecture_id,                  null: false
       t.string :city,           default: "",     null: false
       t.string :address,   default: "",          null: false
-      t.string :building,  default: "",          
+      t.string :building,  default: ""          
       t.string :phone_number,                    null: false
       t.references :order,                     foreign_key: true
 
