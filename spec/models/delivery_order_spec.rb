@@ -12,6 +12,10 @@ RSpec.describe DeliveryOrder, type: :model do
       it 'tokenとpostal_codeとprefecture_idとcityとaddressとphone_numberが入力されていれば購入できる' do
         expect(@delivery_order).to be_valid
       end
+      it 'buildingが入力されていなくても購入できる' do
+      @delivery_order.building = ""
+      expect(@delivery_order).to be_valid
+      end
     end
 
     context '購入できないとき' do
@@ -67,6 +71,24 @@ RSpec.describe DeliveryOrder, type: :model do
         @delivery_order.valid?
         expect(@delivery_order.errors.full_messages).to include 'Phone number is invalid'
       end
+      
+      it 'user_idが空だと購入できない' do
+        @delivery_order.user_id = nil
+        @delivery_order.valid?
+        expect(@delivery_order.errors.full_messages).to include "User can't be blank"
+      end
+
+
+      it 'item_idが空だと購入できない' do
+        @delivery_order.item_id = nil
+        @delivery_order.valid?
+        expect(@delivery_order.errors.full_messages).to include "Item can't be blank"
+      end
+
+
+
+
+
     end
   end
 end
